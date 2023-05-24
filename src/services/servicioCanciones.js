@@ -6,7 +6,7 @@ export async function consultarCanciones() {
       //URL + EP DEL SERVICIO
       const IDARTISTA = "7okwEbXzyT2VffBmyQBWLz"
       const URI = `https://api.spotify.com/v1/artists/${IDARTISTA}/top-tracks?market=us`
-      const TOKEN = "Bearer BQBrFpv9V8Car9JGVWqxzCGQpoU1RvMFcQIYw4pX0zhIrIa7ifcxDh6DzPTZz7Lmz6eAOYJF7BmckDSYAgYsp-ydihr3ePlr7EXMjZHHJOcrdjKclk8"
+      const TOKEN = "Bearer BQDMF6i3b935iJgqTifjC8Mn4wY5sxSL7I5PNqXJR7DXgJwyTMvbyN-se31_LRxN5knerpb3-G6lGibO-PKHS2D-hfFsF1qAcO5kntF_PK1pb0Jo3pU"
 
       //2. QUE VAS A HACER ALLA OME..
       //CONFIGURO LA PETICION
