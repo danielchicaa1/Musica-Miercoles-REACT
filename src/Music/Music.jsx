@@ -7,6 +7,7 @@ export function Music(){
       const[estacargando,setEstacargando]=useState(true)
       const[token,setToken]= useState(null)
 
+      
 
       useEffect(function(){
             ObtenerToken().then(respuesta=>{
@@ -39,7 +40,13 @@ export function Music(){
                   {
                         canciones.map(function(cancion){
                               return(
+                                    <div className="tamaño" style={{
+                                          backgroundImage:`url("${cancion.album.images[0].url}")`,
+                                          backgroundRepeat:"no-repeat"
+                                    }}>
                                     <audio controls src={cancion.preview_url}></audio>
+                                    <h1>{ cancion.popularity} </h1>
+                                    </div>
                               )
                         })
                   }
