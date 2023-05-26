@@ -1,4 +1,4 @@
-export async function consultarCanciones() {
+export async function consultarCanciones(token) {
 
       //RECETA PARA CONSUMIR APIS CON JS
 
@@ -6,7 +6,7 @@ export async function consultarCanciones() {
       //URL + EP DEL SERVICIO
       const IDARTISTA = "7okwEbXzyT2VffBmyQBWLz"
       const URI = `https://api.spotify.com/v1/artists/${IDARTISTA}/top-tracks?market=us`
-      const TOKEN = "Bearer BQDMF6i3b935iJgqTifjC8Mn4wY5sxSL7I5PNqXJR7DXgJwyTMvbyN-se31_LRxN5knerpb3-G6lGibO-PKHS2D-hfFsF1qAcO5kntF_PK1pb0Jo3pU"
+      const TOKEN = `Bearer ${token}`
 
       //2. QUE VAS A HACER ALLA OME..
       //CONFIGURO LA PETICION
@@ -22,4 +22,21 @@ export async function consultarCanciones() {
       let respuesta=await fetch(URI,peticion)
       let canciones=await respuesta.json()
       return canciones
+}
+
+export async function ObtenerToken(){
+
+      const URI = "https://accounts.spotify.com/api/token"
+      
+      let options= {
+            method: "POST",
+            headers:{
+                  "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body:"grant_type=client_credentials&client_id=5938fd7d0e5f4d889ba4db749d5780ad&client_secret=63d8eca3cf88416ca881b4f92588b05b"
+      }
+
+      let respuesta = await fetch (URI, options)
+      let token = await respuesta.json()
+      return token
 }
